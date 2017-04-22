@@ -1,0 +1,15 @@
+<div class="col-md-4 col-md-offset-4">
+<h3 style="margin-bottom: 40px;"> meetup活动创建 </h3>
+  <%= form_for @meetup do |f| %>
+
+    <%= f.label :"title"%>
+    <%= f.text_field :title %>
+    <br>
+    <br>
+    <%= f.label :description%>
+    <br>
+    <%= f.text_area :description %>
+    <br>
+    <%= f.submit "Submit", :disable_with => "Submiting..." %>
+  <% end %>
+</div>

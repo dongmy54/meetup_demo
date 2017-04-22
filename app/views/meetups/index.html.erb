@@ -1,0 +1,22 @@
+<h3 style="text-align: center">meetup活动一览表</h3>
+<%= link_to("发表meetup", new_meetup_path, :class => "pull-right") %>
+<hr>
+<div>
+<table class="table">
+	<thead>
+		<tr>
+			<th>活动名称</th>
+			<th>活动介绍</th>
+			<th>评论条数</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @meetups.each do |meetup| %>
+		<tr>
+			<td><%= link_to(meetup.title, meetup_path(meetup)) %></td>
+			<td><%= meetup.description %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+</div>
