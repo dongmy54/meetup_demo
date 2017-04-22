@@ -1,0 +1,16 @@
+<div class="col-md-8 col-md-offset-2">
+<h3>这里是<%= @meetup.title %>地带！</h3>
+
+<% @meetup.posts.each_with_index do |post,i| %>
+	  第<%= i+1 %>楼 
+     <p><%= post.content %></p>
+      <br>
+    <% end %>
+	<h4>meetup评论</h4>
+    <%= form_for [@meetup,@post]  do |f| %>
+    <h4><%= f.label :content %></h4>
+    <%= f.text_area :content %>
+    <br>
+    <%= f.submit "Submit", :disable_with => "Submiting..." %>
+    <% end %>
+</div>

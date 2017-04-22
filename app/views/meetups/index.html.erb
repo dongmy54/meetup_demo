@@ -15,6 +15,7 @@
 		<tr>
 			<td><%= link_to(meetup.title, meetup_path(meetup)) %></td>
 			<td><%= meetup.description %></td>
+			<td><%= meetup.posts.count %></td>
 		</tr>
 		<% end %>
 	</tbody>
