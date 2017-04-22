@@ -6,4 +6,14 @@ Rails.application.routes.draw do
   	resources :posts
   end
   
+  namespace :api, :defaults => { :format => :json } do
+  	namespace :v1 do
+
+  		post "/signup" => "auth#signup"
+  		post "/login" => "auth#login"
+  		post "/logout" => "auth#logout"
+  		get "/meetups" => "meetups#index"
+  	end
+  end
+
 end
