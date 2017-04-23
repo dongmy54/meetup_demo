@@ -20,7 +20,7 @@ class Api::V1::AuthController < ApiController
           
             # 我们不能直接用： user.password == params[:password]去判断，因为user的密码是查不出来的，为nil
 		if user && user.valid_password?( params[:password])
-			render :json => { :meesage => "Ok",
+			render :json => { :message => "Ok",
 			                  :auth_token => user.authentication_token,
 			                  :user_id => user.id }
 		else
